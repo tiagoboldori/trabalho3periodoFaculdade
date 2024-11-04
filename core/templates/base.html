@@ -1,14 +1,43 @@
+{% load static %}
 <!DOCTYPE html> 
-{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static 'estilo.css'%}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <html lang="pt-br"> 
 <head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, 
-initial-scale=1.0"> 
-<title>Django</title> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0"> 
+    <title>Pagina Inicial</title> 
 </head> 
-<body> 
-<h1>Responsive Horizontal-to-Scrollable Menu</h1> 
-{% block product %}{% endblock %} 
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="{% url 'index'%}">
+              Home
+            </a>
+      
+            <a class="navbar-item" href="{% url 'produto'%}">
+              Produtos
+            </a>
+            <a class="navbar-item" href="{% url 'list_produto'%}">
+                Lista de produtos
+            </a>
+            <a class="navbar-item" href="{% url 'new_produto'%}">
+                Novo Produto
+            </a>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+{% block product %}
+{% endblock %} 
 </body> 
 </html>
